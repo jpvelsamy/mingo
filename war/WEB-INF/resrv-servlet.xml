@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <!--============================================================================================================ -->
+    <!--                                           Handler Mappings                                                  -->
+    <!--============================================================================================================ -->
+
+    <bean id="urlMapping"
+          class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/**/*/lookupflight.do">flightOperationsController</prop>
+                <prop key="/**/*/lookuptickets.do">ticketOperationsController</prop>
+                <prop key="/**/*/blockticket.do">blockTicketController</prop>
+                <prop key="/**/*/completepayment.do">paymentController</prop>                
+            </props>
+        </property>
+    </bean>	
+
+    <bean id="flightOperationsController" class="com.mingo.server.controller.LookupFlightController"/>
+     <bean id="ticketOperationsController" class="com.mingo.server.controller.LookupTicketController"/>
+     <bean id="blockTicketController" class="com.mingo.server.controller.BlockTicketController"/>
+     <bean id="paymentController" class="com.mingo.server.controller.PaymentController"/>
+     
+    
+
+</beans>
